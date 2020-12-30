@@ -1,19 +1,17 @@
 package com.jojoldu.book.springboot.domain.posts;
 
+import com.jojoldu.book.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+
+import javax.persistence.*;
 
 @Getter//6
 @NoArgsConstructor//5
 @Entity//1
-public class Posts {//entity 클래스
+public class Posts extends BaseTimeEntity {//entity 클래스
 
     @Id//2
     @GeneratedValue(strategy = GenerationType.IDENTITY)//3
@@ -32,6 +30,10 @@ public class Posts {//entity 클래스
         this.title = title;
         this.content = content;
         this.author = author;
+    }
+    public void update(String title,String content){
+        this.title=title;
+        this.content=content;
     }
 
 }
