@@ -1,2 +1,3 @@
 .gradle
 .idea
+spring.profiles.include=oauth
